@@ -11,9 +11,8 @@ export default function Home() {
       <Navbar />
       <main id="main-content">
         <Hero />
-
         <Projects />
-        <TechStack />
+        {/* <TechStack /> */}
         <Socials />
       </main>
       <Footer />

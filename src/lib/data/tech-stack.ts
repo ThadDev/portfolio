@@ -1,53 +1,27 @@
-import {
-  ReactIcon, TypeScriptIcon, JavaScriptIcon, NextJsIcon, TailwindIcon,
-  SupabaseIcon, FirebaseIcon, PrismaIcon,
-  ClaudeIcon, OpenAIIcon, AntigravityIcon,
-} from '@/components/ui/TechIcons';
-import { ComponentType, SVGProps } from 'react';
-
-type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
-
 export interface TechItem {
   name: string;
-  Icon: IconComponent;
-  color: string; // brand color for icon tint
+  icon: string; // Iconify icon name
+  color: string; // brand color
+  category: string; // 'frontend' | 'backend' | 'ai'
 }
 
-export interface TechCategory {
-  id: string;
-  label: string;
-  items: TechItem[];
-}
-
-export const techStack: TechCategory[] = [
-  {
-    id: 'frontend',
-    label: 'Frontend',
-    items: [
-      { name: 'React',        Icon: ReactIcon,      color: '#61DAFB' },
-      { name: 'TypeScript',   Icon: TypeScriptIcon,  color: '#3178C6' },
-      { name: 'JavaScript',   Icon: JavaScriptIcon,  color: '#F7DF1E' },
-      { name: 'Next.js',      Icon: NextJsIcon,      color: '#ffffff' },
-      { name: 'Tailwind CSS', Icon: TailwindIcon,    color: '#06B6D4' },
-      { name: 'React Native', Icon: ReactIcon,       color: '#61DAFB' },
-    ],
-  },
-  {
-    id: 'backend',
-    label: 'Backend',
-    items: [
-      { name: 'Supabase',  Icon: SupabaseIcon,  color: '#3ECF8E' },
-      { name: 'Firebase',  Icon: FirebaseIcon,  color: '#FFCA28' },
-      { name: 'Prisma ORM',Icon: PrismaIcon,    color: '#5A67D8' },
-    ],
-  },
-  {
-    id: 'agentic',
-    label: 'Agentic Dev',
-    items: [
-      { name: 'Claude',       Icon: ClaudeIcon,       color: '#D4A574' },
-      { name: 'Antigravity',  Icon: AntigravityIcon,  color: '#f59e0b' },
-      { name: 'Codex',        Icon: OpenAIIcon,       color: '#ffffff' },
-    ],
-  },
+export const techStack: TechItem[] = [
+  // Frontend
+  { name: 'React', icon: 'logos:react', color: '#61DAFB', category: 'frontend' },
+  { name: 'TypeScript', icon: 'logos:typescript-icon', color: '#3178C6', category: 'frontend' },
+  { name: 'JavaScript', icon: 'logos:javascript', color: '#F7DF1E', category: 'frontend' },
+  { name: 'Next.js', icon: 'logos:nextjs', color: '#ffffff', category: 'frontend' },
+  { name: 'Tailwind CSS', icon: 'logos:tailwindcss', color: '#06B6D4', category: 'frontend' },
+  { name: 'React Native', icon: 'logos:react', color: '#61DAFB', category: 'frontend' },
+  // Backend
+  { name: 'Supabase', icon: 'logos:supabase', color: '#3ECF8E', category: 'backend' },
+  { name: 'Firebase', icon: 'logos:firebase', color: '#FFCA28', category: 'backend' },
+  { name: 'Prisma ORM', icon: 'logos:prisma', color: '#5A67D8', category: 'backend' },
+  { name: 'Python', icon: 'logos:python', color: '#3776AB', category: 'backend' },
+  { name: 'Django', icon: 'logos:django', color: '#092E20', category: 'backend' },
+  { name: 'PostgreSQL', icon: 'logos:postgresql', color: '#336791', category: 'backend' },
+  // AI
+  { name: 'Claude', icon: 'mdi:robot', color: '#D4A574', category: 'ai' },
+  { name: 'Antigravity', icon: 'mdi:gravity', color: '#f59e0b', category: 'ai' },
+  { name: 'Codex', icon: 'logos:openai', color: '#ffffff', category: 'ai' },
 ];

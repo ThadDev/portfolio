@@ -11,6 +11,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: 'Food Delivery App',
+    image: '/images/projects/food-app.webp',
+    description:
+      'A luxury restaurant ordering platform built end-to-end — live order tracking, real-time admin notifications, payment integration, and a polished mobile-first customer experience.',
+    live: 'https://m-onyinye-app.vercel.app',
+    github: 'https://github.com/ThadDev/m-onyinye-app',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Stripe'],
+  },
+  {
+    id: 2,
     title: 'Angies Cakes',
     image: '/images/projects/angies.webp',
     description:
@@ -20,7 +30,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
   },
   {
-    id: 2,
+    id: 3,
     title: 'Hilltop',
     image: '/images/projects/real-estate.webp',
     description:
@@ -30,7 +40,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Prisma'],
   },
   {
-    id: 3,
+    id: 4,
     title: 'Cheluxe',
     image: '/images/projects/cheluxe.webp',
     description:
@@ -40,7 +50,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
   },
   {
-    id: 4,
+    id: 5,
     title: 'DevMentor',
     image: '/images/projects/devmentor.webp',
     description:
@@ -49,14 +59,5 @@ export const projects: Project[] = [
     github: 'https://github.com/ThadDev/Dev-Mentor-app',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI API'],
   },
-  {
-    id: 5,
-    title: 'Food Delivery App',
-    image: '/images/projects/food-app.webp',
-    description:
-      'A luxury restaurant ordering platform built end-to-end — live order tracking, real-time admin notifications, payment integration, and a polished mobile-first customer experience.',
-    live: 'https://m-onyinye-app.vercel.app',
-    github: 'https://github.com/ThadDev/m-onyinye-app',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Stripe'],
-  },
+
 ];

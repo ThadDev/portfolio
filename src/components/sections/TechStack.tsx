@@ -3,23 +3,6 @@ import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { techStack } from '@/lib/data/tech-stack';
 
-// Mapping tech names to Iconify icons and categories
-const techInfo: Record<string, { icon: string; category: string }> = {
-  React: { icon: 'logos:react', category: 'frontend' },
-  'Next.js': { icon: 'logos:nextjs', category: 'frontend' },
-  Tailwind: { icon: 'logos:tailwindcss', category: 'frontend' },
-  TypeScript: { icon: 'logos:typescript-icon', category: 'frontend' },
-  JavaScript: { icon: 'logos:javascript', category: 'frontend' },
-  Node: { icon: 'logos:nodejs', category: 'backend' },
-  Express: { icon: 'logos:express', category: 'backend' },
-  Python: { icon: 'logos:python', category: 'backend' },
-  Django: { icon: 'logos:django', category: 'backend' },
-  TensorFlow: { icon: 'logos:tensorflow', category: 'ai' },
-  PyTorch: { icon: 'logos:pytorch', category: 'ai' },
-  // fallback
-  default: { icon: 'mdi:code-tags', category: 'frontend' },
-};
-
 export default function TechStack() {
   const [filter, setFilter] = useState(''); // '' = all, 'frontend', 'backend', 'ai'
   const categories = [
@@ -28,6 +11,8 @@ export default function TechStack() {
     { label: 'Back‑End', value: 'backend' },
     { label: 'AI', value: 'ai' },
   ];
+
+  const filtered = techStack.filter((tech) => filter === '' || tech.category === filter);
 
   return (
     <section id="stack" aria-labelledby="stack-heading" className="py-24 sm:py-32 px-5 sm:px-8">
@@ -55,42 +40,12 @@ export default function TechStack() {
           ))}
         </div>
 
-        {/* Categories */}
-        <div className="space-y-12">
-          {techStack.map((category) => (
-            <div key={category.id} className="flex flex-col sm:flex-row sm:items-start gap-6">
-              {/* Category label */}
-              <div className="sm:w-36 flex-shrink-0 flex sm:justify-end pt-1">
-                <span className="inline-block text-[10px] font-bold tracking-[0.18em] uppercase text-gold-600 dark:text-gold-500 border border-gold-500/25 rounded-full px-3 py-1">
-                  {category.label}
-                </span>
-              </div>
-
-              {/* Divider line */}
-              <div className="hidden sm:block w-px bg-gold-500/15 self-stretch mx-2" />
-
-              {/* Pills */}
-              <div className="flex flex-wrap gap-3 flex-1">
-                {category.items
-                  .filter((tech) => {
-                    const info = techInfo[tech.name] || techInfo['default'];
-                    return filter === '' || info.category === filter;
-                  })
-                  .map((tech) => {
-                    const info = techInfo[tech.name] || techInfo['default'];
-                    return (
-                      <div
-                        key={tech.name}
-                        className="group inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-ink-200/60 dark:border-white/8 bg-gold-500/30 dark:bg-ink-800/60 backdrop-blur-sm hover:border-gold-500/40 dark:hover:border-gold-500/30 hover:bg-gold-500/5 transition-all duration-200 cursor-default"
-                      >
-                        <Icon icon={info.icon} className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
-                        <span className="text-sm font-medium text-ink-800 dark:text-white/80 whitespace-nowrap">
-                          {tech.name}
-                        </span>
-                      </div>
-                    );
-                  })}
-              </div>
+        {/* Tech items grid (2 columns) */}
+        <div className="grid grid-cols-2 gap-4">
+          {filtered.map((tech) => (
+            <div key={tech.name} className="inline-flex items-center space-x-2 bg-gold-500/30 rounded px-2 py-1">
+              <Icon icon={tech.icon} className="w-4 h-4" style={{ color: tech.color }} />
+              <span className="text-sm font-medium text-ink-800 dark:text-white/80 whitespace-nowrap">{tech.name}</span>
             </div>
           ))}
         </div>
