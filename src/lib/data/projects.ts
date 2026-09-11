@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Hilltop',
+    title: 'AirBNB',
     image: '/images/projects/real-estate.webp',
     description:
       'An apartment listing platform built for UNN students to browse, list, and rent housing near campus. Integrates a live listings API for real-time availability and smooth filtering.',

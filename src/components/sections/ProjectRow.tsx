@@ -43,9 +43,9 @@ export default function ProjectRow({ project, index }: ProjectRowProps) {
                 {/* Details */}
                 <div className="lg:col-span-5 space-y-4">
                     <h3 className="text-2xl font-bold text-ink-900 dark:text-white text-center md:text-left">{project.title}</h3>
-                    <p className="text-base text-ink-900 dark:text-ink-100 max-w-prose leading-relaxed">{project.description}</p>
+                    <p className="text-base text-ink-900 dark:text-ink-100 max-w-prose leading-relaxed text-center md:text-left">{project.description}</p>
                     {/* Stack */}
-                    <div className="flex flex-wrap gap-2 text-sm text-ink-900 dark:text-ink-100">
+                    <div className="flex flex-wrap gap-2 text-sm text-ink-900 dark:text-ink-100 justify-center md:justify-start">
                         {project.stack?.map((tech: string) => (
                             <span key={tech} className="px-2 py-1 bg-gold-500/30 rounded">{tech}</span>
                         ))}
