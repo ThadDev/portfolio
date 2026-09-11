@@ -16,13 +16,13 @@ export default function Hero() {
         {/* Left Column: Content */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-5 sm:gap-6">
           {/* Eyebrow / Identity Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-gold-500/25 bg-gold-500/8 dark:bg-gold-500/10 text-xs font-medium tracking-wide text-gold-700 dark:text-gold-400 backdrop-blur-sm shadow-xs">
+          {/* <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-gold-500/25 bg-gold-500/8 dark:bg-gold-500/10 text-xs font-medium tracking-wide text-gold-700 dark:text-gold-400 backdrop-blur-sm shadow-xs">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
             <span>Software Developer</span>
-          </div>
+          </div> */}
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.15rem] font-bold leading-[1.12] tracking-tight text-ink-900 dark:text-white">

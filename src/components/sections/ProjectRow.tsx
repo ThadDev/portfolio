@@ -25,7 +25,7 @@ export default function ProjectRow({ project, index }: ProjectRowProps) {
             </div>
 
             <div
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${isEven ? 'lg:flex-row-reverse' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center ${isEven ? 'lg:flex-row-reverse' : ''}`}
             >
                 {/* Image */}
                 <div className="lg:col-span-7 relative group aspect-[16/9] w-full overflow-hidden" onMouseEnter={() => setOverlayVisible(true)} onMouseLeave={() => setOverlayVisible(false)} onClick={toggleOverlay}>
@@ -37,39 +37,28 @@ export default function ProjectRow({ project, index }: ProjectRowProps) {
                         sizes="(max-width: 1024px) 100vw, 55vw"
                     />
                     {/* Overlay */}
-                    <div
-                        className={`absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center transition-opacity duration-300 ${overlayVisible ? 'opacity-100' : 'opacity-0'} pointer-events-none`}
-                    >
-                        <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-4 py-2 bg-gold-500 text-ink-900 font-medium rounded hover:bg-gold-600 transition-colors"
-                        >
-                            View Project
-                        </a>
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-2 px-4 py-2 bg-ink-800 text-white font-medium rounded hover:bg-ink-700 transition-colors"
-                            >
-                                View Code
-                            </a>
-                        )}
-                    </div>
+
                 </div>
 
                 {/* Details */}
                 <div className="lg:col-span-5 space-y-4">
-                    <h3 className="text-2xl font-bold text-ink-900 dark:text-white">{project.title}</h3>
+                    <h3 className="text-2xl font-bold text-ink-900 dark:text-white text-center md:text-left">{project.title}</h3>
                     <p className="text-base text-ink-900 dark:text-ink-100 max-w-prose leading-relaxed">{project.description}</p>
                     {/* Stack */}
                     <div className="flex flex-wrap gap-2 text-sm text-ink-900 dark:text-ink-100">
                         {project.stack?.map((tech: string) => (
                             <span key={tech} className="px-2 py-1 bg-gold-500/30 rounded">{tech}</span>
                         ))}
+                    </div>
+                    <div className="flex justify-center sm:justify-start gap-4 mt-6">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gold-500 text-ink-900 font-medium rounded hover:bg-gold-600 transition-colors">
+                            View Project
+                        </a>
+                        {project.github && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-ink-800 border rounded border-gold-500 text-white font-medium rounded hover:bg-ink-700 transition-colors">
+                                View Code
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
